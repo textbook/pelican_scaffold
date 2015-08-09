@@ -1,6 +1,11 @@
 Pelican Scaffold
 ================
 
+A simple template for Pelican sites on GitHub Pages with Travis integration.
+
+Introduction
+------------
+
 [Pelican] is a Python-powered static site generator that, when combined with
 the hosting provided by [GitHub Pages][ghp] and automated build and CI from
 [Travis], makes it incredibly easy to manage your own blog.
@@ -42,9 +47,9 @@ Installation
   that the site gets published to the correct place (if you don't want to use
   `<yourname>.github.io`, you will need to edit more extensively).
 
-1. Set up the source repository (again, probably `<yourname>.github.io-source`)
- on Travis; it's probably best to set it build only on pushes, so that pull
- requests don't cause any trouble.
+1. Set up your forked repository on Travis; it's probably best to set it build
+ only on pushes, so that pull requests don't cause any trouble. You can modify
+ `.travis.yml` to match your version of Python if required.
 
 1. Generate an authentication token for GitHub (`Settings > Personal access
   tokens > Generate new token`), which will allow the deployment script to push
@@ -63,8 +68,6 @@ The build script is based heavily on [*"How to automatically build your Pelican
 blog and publish it to Github Pages"*][zonca] by Andrea Zonca, with the
 modifications suggested in [*"Deploying Pelican Sites Using Travis CI"*][yap] by
 Kevin Yap.
-
-
 
  [ghp]: https://pages.github.com/
  [pelican]: http://docs.getpelican.com/
