@@ -56,10 +56,27 @@ Installation
   to the output repository, and add it to Travis as an environment variable
   named `GH_PAGES`.
 
-1. Delete this `README` file, to avoid issues with Pelican processing `markdown`
- files, then push to your source repo.
+1. Commit and push this repository to kick off the build and publication of
+  the first version of your new site.
 
-Voila!
+Voila! You can now develop your site locally, or add new articles directly on
+GitHub in the content folder, and the live version will be updated accordingly.
+
+Suggestions
+-----------
+
+ - A `CNAME` file is required if you want to use a custom domain with GitHub
+   Pages. The easiest way to provide this is to add an `extra` directory to
+   `content`, put the appropriate `CNAME` in that directory (see [GitHub's
+   help][domain]) and add `STATIC_PATHS.append('extra')` and
+   `EXTRA_PATH_METADATA['extra/CNAME'] = {'path': 'CNAME'}` to
+   `pelicanconf.py`. You can then set `SITEURL = "<your.custom.domain>"` instead
+   of `SITEURL = "http://<yourname.github.io>"`
+ - Note that `pelicanconf.py` should contain settings used for both local
+   development *and* publication, but `publishconf.py` will be used by the
+   deploy script, so you can use that for things that make local development
+   more complex (e.g. I only have the publication `SITEURL` defined in the
+   publication config so that `localhost` still works OK). 
 
 Acknowledgements
 ----------------
@@ -69,6 +86,7 @@ blog and publish it to Github Pages"*][zonca] by Andrea Zonca, with the
 modifications suggested in [*"Deploying Pelican Sites Using Travis CI"*][yap] by
 Kevin Yap.
 
+ [domain]: https://help.github.com/articles/adding-a-cname-file-to-your-repository/
  [ghp]: https://pages.github.com/
  [pelican]: http://docs.getpelican.com/
  [travis]: https://travis-ci.org/
