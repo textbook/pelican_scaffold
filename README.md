@@ -29,7 +29,9 @@ Installation
   the questions, but answer the following:
 
    - *What will be the title of this web site?*
+
    - *Who will be the author of this web site?*
+
    - *What is your URL prefix?* (use `http://<yourname>.github.io`)
 
   It may seem odd to answer `N` to *Do you want to upload your website using
@@ -49,21 +51,25 @@ Installation
 
 1. Set up your forked repository on Travis; it's probably best to set it build
  only on pushes, so that pull requests don't cause any trouble. You can modify
- `.travis.yml` to match your version of Python if required.
+ `.travis.yml` to match your version of Python, if required.
 
 1. Generate an authentication token for GitHub (`Settings > Personal access
   tokens > Generate new token`), which will allow the deployment script to push
   to the output repository, and add it to Travis as an environment variable
   named `GH_PAGES`.
 
+1. If you don't have it already, create a new GitHub repository named
+ `<yourname>.github.io` for the site to be published to.
+
 1. Commit and push this repository to kick off the build and publication of
   the first version of your new site.
 
 Voila! You can now develop your site locally, or add new articles directly on
 GitHub in the content folder, and the live version will be updated accordingly.
+The site will be visible online at `http://<yourname>.github.io`.
 
-Suggestions
------------
+Tips
+----
 
  - A `CNAME` file is required if you want to use a custom domain with GitHub
    Pages. The easiest way to provide this is to add an `extra` directory to
@@ -72,11 +78,12 @@ Suggestions
    `EXTRA_PATH_METADATA['extra/CNAME'] = {'path': 'CNAME'}` to
    `pelicanconf.py`. You can then set `SITEURL = "<your.custom.domain>"` instead
    of `SITEURL = "http://<yourname.github.io>"`
+
  - Note that `pelicanconf.py` should contain settings used for both local
    development *and* publication, but `publishconf.py` will be used by the
    deploy script, so you can use that for things that make local development
    more complex (e.g. I only have the publication `SITEURL` defined in the
-   publication config so that `localhost` still works OK). 
+   publication config so that `localhost` still works OK).
 
 Acknowledgements
 ----------------
