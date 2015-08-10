@@ -88,14 +88,18 @@ Tips
 Acknowledgements
 ----------------
 
-The build script is based heavily on [*"How to automatically build your Pelican
-blog and publish it to Github Pages"*][zonca] by Andrea Zonca, with the
-modifications suggested in [*"Deploying Pelican Sites Using Travis CI"*][yap] by
-Kevin Yap.
+The build script (`deploy.sh`) is based heavily on [*"How to automatically build 
+your Pelican blog and publish it to Github Pages"*][zonca-article] by [Andrea 
+Zonca][zonca], with the modifications suggested in [*"Deploying Pelican Sites 
+Using Travis CI"*][yap-article] by [Kevin Yap][yap].
 
+ [1]: 
+ [2]: 
  [domain]: https://help.github.com/articles/adding-a-cname-file-to-your-repository/
  [ghp]: https://pages.github.com/
  [pelican]: http://docs.getpelican.com/
  [travis]: https://travis-ci.org/
- [yap]: http://kevinyap.ca/2014/06/deploying-pelican-sites-using-travis-ci/
- [zonca]: http://zonca.github.io/2013/09/automatically-build-pelican-and-publish-to-github-pages.html
+ [yap]: https://github.com/iKevinY
+ [yap-article]: http://kevinyap.ca/2014/06/deploying-pelican-sites-using-travis-ci/
+ [zonca]: https://github.com/zonca
+ [zonca-article]: http://zonca.github.io/2013/09/automatically-build-pelican-and-publish-to-github-pages.html
