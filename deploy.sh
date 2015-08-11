@@ -33,9 +33,6 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     fi
     detailedMessage="Commit $commitHash pushed to GitHub Pages by Travis build $TRAVIS_BUILD_NUMBER"
     git commit -m "$commitMessage" -m "$detailedMessage"
-    git push -fq origin $BRANCH > /dev/null
-    if [ $? != 0 ]; then
-      exit 1
-    fi
+    git push -fq origin $BRANCH > /dev/null || exit $?
     echo -e "Deploy completed\n"
 fi
